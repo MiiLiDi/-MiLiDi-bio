@@ -1,0 +1,82 @@
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  color: #fff;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(113, 82, 255, .35), transparent 35%),
+    radial-gradient(circle at 80% 90%, rgba(0, 210, 255, .22), transparent 35%),
+    #0b0b12;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px 16px;
+}
+
+.card {
+  width: min(100%, 560px);
+  padding: 42px 28px 24px;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 28px;
+  background: rgba(18, 18, 28, .78);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 24px 80px rgba(0,0,0,.4);
+}
+
+.avatar {
+  width: 88px;
+  height: 88px;
+  margin: 0 auto 18px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-size: 34px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #8b5cf6, #06b6d4);
+  box-shadow: 0 12px 35px rgba(80, 90, 255, .35);
+}
+
+h1 { margin: 0; font-size: 40px; letter-spacing: -.04em; }
+.subtitle { margin: 10px 0 28px; color: #aaaaba; }
+
+.links { display: grid; gap: 12px; }
+
+.links a {
+  display: block;
+  padding: 16px 18px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 650;
+  border-radius: 16px;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.08);
+  transition: transform .2s ease, background .2s ease;
+}
+
+.links a:hover { transform: translateY(-2px); background: rgba(255,255,255,.14); }
+
+.section {
+  margin-top: 28px;
+  padding: 22px;
+  text-align: left;
+  border-radius: 20px;
+  background: rgba(255,255,255,.05);
+}
+
+.section h2 { margin: 0 0 8px; font-size: 20px; }
+.section p { margin: 0; line-height: 1.6; color: #b9b9c8; }
+footer { margin-top: 28px; color: #777789; font-size: 13px; }
+
+@media (max-width: 480px) {
+  .card { padding: 34px 18px 20px; border-radius: 24px; }
+  h1 { font-size: 34px; }
+}
