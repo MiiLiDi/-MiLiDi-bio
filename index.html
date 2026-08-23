@@ -3,34 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MiLiDi — Bio</title>
-  <meta name="description" content="MiLiDi — личная страница и ссылки">
+  <meta name="theme-color" content="#09090b">
+  <meta name="description" content="MiLiDi — личная страница">
+  <title>MiLiDi</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="page">
-    <section class="card">
+  <div class="noise"></div>
+  <header class="topbar">
+    <a class="brand" href="#top">MiLiDi<span>.</span></a>
+    <nav>
+      <a href="#about">Обо мне</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-glow"></div>
       <div class="avatar">M</div>
-      <h1>MiLiDi</h1>
-      <p class="subtitle">Добро пожаловать на мою страницу</p>
+      <p class="eyebrow">PERSONAL WEBSITE</p>
+      <h1>Привет, я <span>MiLiDi</span></h1>
+      <p class="lead">Добро пожаловать на мою личную страницу.<br>Здесь будет всё самое важное обо мне.</p>
+      <div class="hero-actions">
+        <a class="button primary" href="#about">Узнать обо мне <span>↓</span></a>
+        <a class="button secondary" href="#contacts">Связаться</a>
+      </div>
+    </section>
 
-      <nav class="links" aria-label="Ссылки">
-        <a href="#about">Обо мне</a>
-        <a href="#contacts">Контакты</a>
-      </nav>
+    <section id="about" class="content-section">
+      <p class="section-label">01 — ABOUT</p>
+      <h2>Немного обо мне</h2>
+      <p class="section-text">Это место, которое мы постепенно превратим в полноценный личный сайт: добавим проекты, социальные сети, фотографии, музыку и всё, что захочется.</p>
+    </section>
 
-      <section id="about" class="section">
-        <h2>Обо мне</h2>
-        <p>Это моя личная страница. Здесь постепенно появятся мои проекты, соцсети и другие ссылки.</p>
-      </section>
-
-      <section id="contacts" class="section">
-        <h2>Контакты</h2>
-        <p>Ссылки и контакты можно добавить позже.</p>
-      </section>
-
-      <footer>© 2026 MiLiDi</footer>
+    <section id="contacts" class="content-section contacts">
+      <p class="section-label">02 — CONTACTS</p>
+      <h2>Связаться со мной</h2>
+      <a class="contact-card" href="mailto:">
+        <span class="contact-icon">✉</span>
+        <span><small>EMAIL</small><strong>Добавить почту</strong></span>
+        <span class="arrow">↗</span>
+      </a>
     </section>
   </main>
+
+  <footer>© 2026 MiLiDi <span>•</span> made with curiosity</footer>
 </body>
 </html>
