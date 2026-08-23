@@ -4,10 +4,8 @@ body{cursor:none!important;background:#06100a!important;background-color:#06100a
 body::before{content:"";position:fixed;inset:-18%;z-index:0;pointer-events:none;background:radial-gradient(circle at 18% 28%,rgba(93,255,138,.11),transparent 20%),radial-gradient(circle at 82% 68%,rgba(25,217,107,.09),transparent 23%),radial-gradient(circle at 52% 48%,rgba(70,160,100,.06),transparent 18%);animation:miAmbient 14s ease-in-out infinite alternate;}
 body::after{animation:miGrid 20s linear infinite;z-index:0;}
 .topbar,main,footer{position:relative;z-index:2;}
-.mi-cursor-dot,.mi-cursor-ring{position:fixed;left:0;top:0;pointer-events:none;border-radius:50%;z-index:10000;opacity:0;transform:translate(-50%,-50%)}
-.mi-cursor-dot{width:7px;height:7px;background:#5dff8a;box-shadow:0 0 12px #5dff8a,0 0 28px rgba(93,255,138,.5);transition:opacity .2s}
-.mi-cursor-ring{width:30px;height:30px;border:1px solid rgba(93,255,138,.65);transition:width .2s,height .2s,background .2s,border-color .2s,opacity .2s}
-.mi-cursor-ring.hover{width:45px;height:45px;background:rgba(93,255,138,.07);border-color:#5dff8a}
+.mi-cursor-dot{position:fixed;left:0;top:0;pointer-events:none;border-radius:50%;z-index:10000;opacity:0;transform:translate(-50%,-50%);width:7px;height:7px;background:#5dff8a;box-shadow:0 0 12px #5dff8a,0 0 28px rgba(93,255,138,.5);transition:opacity .2s}
+.mi-cursor-ring{display:none!important}
 .mi-trail{position:fixed;width:5px;height:5px;border-radius:50%;pointer-events:none;z-index:9998;background:#5dff8a;box-shadow:0 0 10px rgba(93,255,138,.65);animation:miTrail .55s ease-out forwards}
 .game-card,.game-mini-grid a,.grid article,.bio,.info-box,.button,.telegram-link{will-change:transform}
 .game-card,.game-mini-grid a,.grid article{transition:transform .32s cubic-bezier(.2,.8,.2,1),border-color .25s,background .25s,box-shadow .32s}
