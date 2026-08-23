@@ -1,12 +1,14 @@
 /* MiLiDi interactive visual layer */
-body{cursor:none;background-color:var(--bg);}
-body::before{content:"";position:fixed;inset:-18%;z-index:-3;pointer-events:none;background:radial-gradient(circle at 18% 28%,rgba(93,255,138,.11),transparent 20%),radial-gradient(circle at 82% 68%,rgba(25,217,107,.09),transparent 23%),radial-gradient(circle at 52% 48%,rgba(70,160,100,.06),transparent 18%);animation:miAmbient 14s ease-in-out infinite alternate}
-body::after{animation:miGrid 20s linear infinite}
+html{background:#06100a!important;min-height:100%;}
+body{cursor:none!important;background:#06100a!important;background-color:#06100a!important;color:#f4fff7;min-height:100vh;}
+body::before{content:"";position:fixed;inset:-18%;z-index:0;pointer-events:none;background:radial-gradient(circle at 18% 28%,rgba(93,255,138,.11),transparent 20%),radial-gradient(circle at 82% 68%,rgba(25,217,107,.09),transparent 23%),radial-gradient(circle at 52% 48%,rgba(70,160,100,.06),transparent 18%);animation:miAmbient 14s ease-in-out infinite alternate;}
+body::after{animation:miGrid 20s linear infinite;z-index:0;}
+.topbar,main,footer{position:relative;z-index:2;}
 .mi-cursor-dot,.mi-cursor-ring{position:fixed;left:0;top:0;pointer-events:none;border-radius:50%;z-index:10000;opacity:0;transform:translate(-50%,-50%)}
-.mi-cursor-dot{width:7px;height:7px;background:var(--accent);box-shadow:0 0 12px var(--accent),0 0 28px rgba(93,255,138,.5);transition:opacity .2s}
+.mi-cursor-dot{width:7px;height:7px;background:#5dff8a;box-shadow:0 0 12px #5dff8a,0 0 28px rgba(93,255,138,.5);transition:opacity .2s}
 .mi-cursor-ring{width:30px;height:30px;border:1px solid rgba(93,255,138,.65);transition:width .2s,height .2s,background .2s,border-color .2s,opacity .2s}
-.mi-cursor-ring.hover{width:45px;height:45px;background:rgba(93,255,138,.07);border-color:var(--accent)}
-.mi-trail{position:fixed;width:5px;height:5px;border-radius:50%;pointer-events:none;z-index:9998;background:var(--accent);box-shadow:0 0 10px rgba(93,255,138,.65);animation:miTrail .55s ease-out forwards}
+.mi-cursor-ring.hover{width:45px;height:45px;background:rgba(93,255,138,.07);border-color:#5dff8a}
+.mi-trail{position:fixed;width:5px;height:5px;border-radius:50%;pointer-events:none;z-index:9998;background:#5dff8a;box-shadow:0 0 10px rgba(93,255,138,.65);animation:miTrail .55s ease-out forwards}
 .game-card,.game-mini-grid a,.grid article,.bio,.info-box,.button,.telegram-link{will-change:transform}
 .game-card,.game-mini-grid a,.grid article{transition:transform .32s cubic-bezier(.2,.8,.2,1),border-color .25s,background .25s,box-shadow .32s}
 .game-card:hover,.game-mini-grid a:hover,.grid article:hover{transform:translateY(-8px) scale(1.012);box-shadow:0 18px 50px rgba(0,0,0,.24),0 0 28px rgba(93,255,138,.07)}
@@ -15,11 +17,10 @@ body::after{animation:miGrid 20s linear infinite}
 .game-card .game-icon,.minecraft-mini-icon{transition:transform .35s cubic-bezier(.2,.8,.2,1),filter .35s}
 .game-card:hover .game-icon{transform:scale(1.1) rotate(-4deg);filter:drop-shadow(0 0 12px rgba(93,255,138,.3))}
 .game-card:active,.game-mini-grid a:active,.grid article:active,.button:active{transform:scale(.98)}
-nav a{transition:color .25s,transform .25s}
-nav a:hover{transform:translateY(-2px)}
+nav a{transition:color .25s,transform .25s}nav a:hover{transform:translateY(-2px)}
 .brand{transition:transform .25s,text-shadow .25s}.brand:hover{transform:translateY(-2px);text-shadow:0 0 18px rgba(93,255,138,.45)}
 @keyframes miAmbient{0%{transform:translate3d(-2%,-1%,0) scale(1)}50%{transform:translate3d(2%,2%,0) scale(1.06)}100%{transform:translate3d(-1%,3%,0) scale(1.02)}}
 @keyframes miGrid{from{background-position:0 0,0 0}to{background-position:40px 40px,40px 40px}}
 @keyframes miTrail{from{opacity:.7;transform:scale(1)}to{opacity:0;transform:scale(.15)}}
-@media(pointer:coarse){body{cursor:auto}.mi-cursor-dot,.mi-cursor-ring,.mi-trail{display:none}}
+@media(pointer:coarse){body{cursor:auto!important}.mi-cursor-dot,.mi-cursor-ring,.mi-trail{display:none}}
 @media(prefers-reduced-motion:reduce){.mi-cursor-dot,.mi-cursor-ring,.mi-trail{display:none}body::before,body::after{animation:none!important}.game-card,.game-mini-grid a,.grid article{transition:none!important}}
