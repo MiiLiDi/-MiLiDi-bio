@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="style.css">
 <style>
 #mc-transition,#brawl-transition{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;overflow:hidden}
-#mc-transition{background:rgba(3,10,6,.96)}#brawl-transition{background:radial-gradient(circle,rgba(40,15,55,.98),rgba(5,5,12,.99))}
+#mc-transition{background:rgba(3,10,6,.96)}#brawl-transition{background:radial-gradient(circle,rgba(40,15,55,.98),rgba(5,5,12,.99)}
 #mc-transition.active,#brawl-transition.active{display:flex}
 #mc-core{width:150px;height:150px;object-fit:contain;position:relative;z-index:3;opacity:0;transform:scale(.35);filter:drop-shadow(0 0 18px rgba(93,255,138,.5))}
 #mc-transition.active #mc-core{animation:mcCore 1.25s cubic-bezier(.2,.8,.2,1) .25s forwards}
@@ -42,7 +42,12 @@
 <div id="mc-transition" aria-hidden="true"><div class="mc-flash"></div><img id="mc-core" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRw6twcGQEE0m1Wzd42TKOkfcF0hH3bzqyNsFS-4ZXz8g&s" alt="Minecraft"><i class="mc-particle"></i><i class="mc-particle"></i><i class="mc-particle"></i><i class="mc-particle"></i><i class="mc-particle"></i><i class="mc-particle"></i><i class="mc-particle"></i><i class="mc-particle"></i><i class="mc-particle"></i><i class="mc-particle"></i><i class="mc-particle"></i><i class="mc-particle"></i></div>
 <div id="brawl-transition" aria-hidden="true"><div id="brawl-flash"></div><div id="brawl-shock"></div><img id="brawl-star" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQCDybWJCNUPsqF4EZgEzcIirN-VgQEoNXr1brMZblpg&s=10" alt="Brawl Stars"><strong id="brawl-word">BRAWL!</strong><i class="brawl-particle"></i><i class="brawl-particle"></i><i class="brawl-particle"></i><i class="brawl-particle"></i><i class="brawl-particle"></i><i class="brawl-particle"></i><i class="brawl-particle"></i><i class="brawl-particle"></i></div>
 <script>
-document.querySelector('.minecraft-transition-link').addEventListener('click',function(e){e.preventDefault();const overlay=document.getElementById('mc-transition');overlay.classList.add('active');setTimeout(()=>{window.location.href=this.href},1450)});
-document.querySelector('.brawl-transition-link').addEventListener('click',function(e){e.preventDefault();const overlay=document.getElementById('brawl-transition');overlay.classList.add('active');setTimeout(()=>{window.location.href=this.href},1500)});
+const mcOverlay=document.getElementById('mc-transition');
+const brawlOverlay=document.getElementById('brawl-transition');
+function resetTransitions(){mcOverlay.classList.remove('active');brawlOverlay.classList.remove('active');mcOverlay.setAttribute('aria-hidden','true');brawlOverlay.setAttribute('aria-hidden','true')}
+window.addEventListener('pageshow',resetTransitions);
+window.addEventListener('pagehide',resetTransitions);
+document.querySelector('.minecraft-transition-link').addEventListener('click',function(e){e.preventDefault();mcOverlay.classList.add('active');mcOverlay.setAttribute('aria-hidden','false');setTimeout(()=>{window.location.href=this.href},1450)});
+document.querySelector('.brawl-transition-link').addEventListener('click',function(e){e.preventDefault();brawlOverlay.classList.add('active');brawlOverlay.setAttribute('aria-hidden','false');setTimeout(()=>{window.location.href=this.href},1500)});
 </script>
 </body></html>
