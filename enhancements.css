@@ -1,6 +1,7 @@
 /* MiLiDi interactive visual layer */
 html{background:#06100a!important;min-height:100%;background-color:#06100a!important;}
-body{cursor:none!important;background:#06100a!important;background-color:#06100a!important;color:#f4fff7;min-height:100vh;margin:0;}
+body,body *{cursor:none!important;}
+body{background:#06100a!important;background-color:#06100a!important;color:#f4fff7;min-height:100vh;margin:0;}
 body::before{content:"";position:fixed;inset:-18%;z-index:0;pointer-events:none;background:radial-gradient(circle at 18% 28%,rgba(93,255,138,.11),transparent 20%),radial-gradient(circle at 82% 68%,rgba(25,217,107,.09),transparent 23%),radial-gradient(circle at 52% 48%,rgba(70,160,100,.06),transparent 18%);animation:miAmbient 14s ease-in-out infinite alternate;}
 body::after{animation:miGrid 20s linear infinite;z-index:0;}
 .topbar,main,footer{position:relative;z-index:2;}
@@ -20,5 +21,5 @@ nav a{transition:color .25s,transform .25s}nav a:hover{transform:translateY(-2px
 @keyframes miAmbient{0%{transform:translate3d(-2%,-1%,0) scale(1)}50%{transform:translate3d(2%,2%,0) scale(1.06)}100%{transform:translate3d(-1%,3%,0) scale(1.02)}}
 @keyframes miGrid{from{background-position:0 0,0 0}to{background-position:40px 40px,40px 40px}}
 @keyframes miTrail{from{opacity:.7;transform:scale(1)}to{opacity:0;transform:scale(.15)}}
-@media(pointer:coarse){body{cursor:auto!important}.mi-cursor-dot,.mi-cursor-ring,.mi-trail{display:none}}
+@media(pointer:coarse){body,body *{cursor:auto!important}.mi-cursor-dot,.mi-cursor-ring,.mi-trail{display:none}}
 @media(prefers-reduced-motion:reduce){.mi-cursor-dot,.mi-cursor-ring,.mi-trail{display:none}body::before,body::after{animation:none!important}.game-card,.game-mini-grid a,.grid article{transition:none!important}}
